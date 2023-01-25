@@ -1,0 +1,78 @@
+.base_todo {
+    font-weight: 400;
+    padding: 0.925em 1.25em;
+
+    display: flex;
+    align-items: center;
+    column-gap: 1em;
+
+    color: var(--font-col);
+    background-color: var(--sec-col);
+
+    &__check_ctn {
+        width: 1.75em;
+        height: 1.75em;
+        padding: 1px;
+
+        border-radius: 50%;
+        border: 1px solid var(--highlight-col);
+
+        &:hover {
+            background: linear-gradient(
+                to bottom right,
+                hsl(192, 100%, 67%),
+                hsl(280, 87%, 65%)
+            );
+        }
+
+        &__child {
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: inherit;
+            background-color: var(--sec-col);
+
+            &__active {
+                background: linear-gradient(
+                    to bottom right,
+                    hsl(192, 100%, 67%),
+                    hsl(280, 87%, 65%)
+                );
+            }
+        }
+    }
+
+    &__right_ctn {
+        margin-top: 0.25em;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.todo_radius {
+    border-radius: 0.25em;
+    overflow: hidden;
+}
+
+.todo {
+    &__task_done {
+        text-decoration: line-through;
+        color: var(--highlight-col);
+    }
+    &__remove_btn {
+        margin-left: auto;
+    }
+}
+
+.create_todo_input {
+  margin-bottom: 0.15em;
+
+  &::placeholder {
+    transform: translateY(1px);
+  }
+}

@@ -1,0 +1,66 @@
+:root {
+    --prim-bright-blue: hsl(220, 98%, 61%);
+    --prim-checked-bg: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+    /* light theme palette */
+    --v-light-gray: hsl(0, 0%, 98%);
+    --v-light-grayish-blue: hsl(236, 33%, 92%);
+    --light-grayish-blue: hsl(233, 11%, 84%);
+    --dark-grayish-blue: hsl(236, 9%, 61%);
+    --v-dark-grayish-blue: hsl(235, 19%, 35%);
+
+    /* dark theme palette */
+    --v-dark-blue: hsl(235, 21%, 11%);
+    --v-dark-desat-blue: hsl(235, 24%, 19%);
+    --light-grayish-blue: hsl(234, 39%, 85%);
+    --light-grayish-blue--hover: hsl(236, 33%, 92%);
+    --dark-grayish-blue: hsl(234, 11%, 52%);
+    --dark-grayish-blue: hsl(233, 14%, 35%);
+    --v-dark-grayish-blue: hsl(237, 14%, 26%);
+
+    --prim-col: var(--v-dark-blue);
+    --sec-col: var(--v-dark-desat-blue);
+    --highlight-col: var(--v-dark-grayish-blue);
+    --font-col: var(--light-grayish-blue);
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Josefin Sans", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    background: none;
+    border: none;
+    outline: none;
+    transition: color, background-color 0.25s;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+input {
+    font-size: inherit;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    color: inherit;
+    caret-color: inherit;
+}
+
+@media only screen and (min-width: 376px) {
+    html {
+        font-size: 18px;
+    }
+}

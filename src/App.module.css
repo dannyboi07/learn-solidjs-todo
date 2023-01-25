@@ -1,0 +1,62 @@
+.App {
+    min-height: 100vh;
+    padding: 3em 1em;
+
+    background-color: var(--prim-col);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.App__header_ctn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: white;
+}
+
+.App__header_ctn > h1 {
+    letter-spacing: 0.4em;
+}
+
+.App__dark {
+    background-image: url(./assets/bg-mobile-dark.jpg);
+}
+
+.App__light {
+    background-image: url(./assets/bg-mobile-light.jpg);
+}
+
+.App__create_todo_ctn {
+    margin-top: 2em;
+}
+
+.App__todos_ctn {
+    margin-top: 1.25em;
+    border-radius: 0.25em;
+    overflow: hidden;
+}
+
+.App__todos_ctn > div:not(:last-child) {
+    border-bottom: 1.5px solid var(--highlight-col);
+}
+
+@media only screen and (min-width: 376px) {
+    .App {
+        padding: 4em 1em;
+    }
+
+    .App__dark {
+        background-image: url(./assets/bg-desktop-dark.jpg);
+    }
+
+    .App__light {
+        background-image: url(./assets/bg-desktop-light.jpg);
+    }
+
+    .App__container {
+        margin: 0 auto;
+        max-width: 550px;
+    }
+}

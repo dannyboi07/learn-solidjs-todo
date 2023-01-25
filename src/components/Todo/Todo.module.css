@@ -1,0 +1,64 @@
+.base_todo {
+  font-weight: 400;
+  padding: 0.925em 1.25em;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 1em;
+       column-gap: 1em;
+  color: var(--font-col);
+  background-color: var(--sec-col);
+}
+.base_todo__check_ctn {
+  width: 1.75em;
+  height: 1.75em;
+  padding: 1px;
+  border-radius: 50%;
+  border: 1px solid var(--highlight-col);
+}
+.base_todo__check_ctn:hover {
+  background: linear-gradient(to bottom right, hsl(192deg, 100%, 67%), hsl(280deg, 87%, 65%));
+}
+.base_todo__check_ctn__child {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: inherit;
+  background-color: var(--sec-col);
+}
+.base_todo__check_ctn__child__active {
+  background: linear-gradient(to bottom right, hsl(192deg, 100%, 67%), hsl(280deg, 87%, 65%));
+}
+.base_todo__right_ctn {
+  margin-top: 0.25em;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.todo_radius {
+  border-radius: 0.25em;
+  overflow: hidden;
+}
+
+.todo__task_done {
+  text-decoration: line-through;
+  color: var(--highlight-col);
+}
+.todo__remove_btn {
+  margin-left: auto;
+}
+
+.create_todo_input {
+  margin-bottom: 0.15em;
+}
+.create_todo_input::-moz-placeholder {
+  transform: translateY(1px);
+}
+.create_todo_input:-ms-input-placeholder {
+  transform: translateY(1px);
+}
+.create_todo_input::placeholder {
+  transform: translateY(1px);
+}/*# sourceMappingURL=Todo.module.css.map */
