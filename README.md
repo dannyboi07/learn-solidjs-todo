@@ -1,3 +1,5 @@
+## A Todo App build in SolidJS with the purpose of learning SolidJS, with design templates from FrontendMentor.io
+
 ## Usage
 
 Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
