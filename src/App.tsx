@@ -24,6 +24,42 @@ function getStoredOrDefaultTodos(): Array<Todo> {
     }];
 }
 
+function lenOfRemainingTodos(todos: Array<Todo>): number {
+    return todos.reduce((acc, curr) => !curr.done ? acc + 1 : acc, 0);
+}
+
+function filterTodos(todos: Array<Todo>, filterType: string): Array<Todo> {
+    let todoStatusShouldBe: boolean | null = null;
+
+    if (filterType === "active") todoStatusShouldBe = false;
+    else if (filterType === "completed") todoStatusShouldBe = true;
+
+    if (todoStatusShouldBe !== null) return todos.filter(todo => todo.done === todoStatusShouldBe);
+
+    return todos;
+}
+
+const filterTypes = [
+    "all",
+    "active",
+    "completed"
+];
+
+const FilterButton: Component<{ type: string, handleClick: () => {}, activeType: string; }> = (props) => {
+    return (
+        <button
+            onClick={props.handleClick}
+            classList={{
+                [styles.App__todos_ctn__filters_ctn__active_filter]: props.type === props.activeType
+            }}
+        >
+            {
+                props.type
+            }
+        </button>
+    );
+};
+
 export type Todo = {
     done: boolean;
     task: string;
@@ -36,6 +72,7 @@ const App: Component = () => {
         task: ""
     });
     const [todos, setTodos] = createSignal<Array<Todo>>(getStoredOrDefaultTodos());
+    const [filterType, setFilterType] = createSignal<string>("all");
 
     // Theme handler
     createEffect(() => {
@@ -109,6 +146,10 @@ const App: Component = () => {
         setTodos(prev => prev.filter((_, i) => idx !== i));
     }
 
+    function handleClearCompletedTodos() {
+        setTodos(prev => prev.filter(todo => !todo.done));
+    }
+
     return (
         <main
             class={styles.App}
@@ -138,7 +179,7 @@ const App: Component = () => {
                 </div>
 
                 <div class={styles.App__todos_ctn}>
-                    <For each={todos()}>
+                    <For each={filterTodos(todos(), filterType())}>
                         {
                             (todo, idx) => (
                                 <TodoComp
@@ -149,6 +190,33 @@ const App: Component = () => {
                             )
                         }
                     </For>
+                    <div class={styles.App__todos_ctn__filters_ctn}>
+                        <span>
+                            {lenOfRemainingTodos(todos())} items left
+                        </span>
+
+                        <div
+                            class={styles.App__todos_ctn__filters_ctn__center_ctn}
+                        >
+                            <For each={filterTypes}>
+                                {
+                                    (type) => (
+                                        <FilterButton
+                                            type={type}
+                                            handleClick={() => setFilterType(type)}
+                                            activeType={filterType()}
+                                        />
+                                    )
+                                }
+                            </For>
+                        </div>
+
+                        <button
+                            onClick={handleClearCompletedTodos}
+                        >
+                            Clear completed
+                        </button>
+                    </div>
                 </div>
             </div>
 

@@ -42,6 +42,36 @@
     border-bottom: 1.5px solid var(--highlight-col);
 }
 
+.App__todos_ctn__filters_ctn {
+    font-size: 0.85rem;
+    padding: 1em 1.5em;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: var(--highlight-col);
+    background-color: var(--sec-col);
+}
+
+.App__todos_ctn__filters_ctn button {
+    color: inherit;
+    text-transform: capitalize;
+    transition: color 0.25s;
+}
+
+.App__todos_ctn__filters_ctn button:hover {
+    color: var(--font-col);
+}
+
+.App__todos_ctn__filters_ctn__active_filter {
+    color: var(--prim-bright-blue) !important;
+}
+
+.App__todos_ctn__filters_ctn__center_ctn {
+    display: flex;
+    column-gap: 1em;
+}
+
 @media only screen and (min-width: 376px) {
     .App {
         padding: 4em 1em;
