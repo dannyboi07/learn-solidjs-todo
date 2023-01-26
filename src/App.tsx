@@ -45,12 +45,12 @@ const filterTypes = [
     "completed"
 ];
 
-const FilterButton: Component<{ type: string, handleClick: () => {}, activeType: string; }> = (props) => {
+const FilterButton: Component<{ type: string, handleClick: () => {}, isActive: boolean; }> = (props) => {
     return (
         <button
             onClick={props.handleClick}
             classList={{
-                [styles.App__todos_ctn__filters_ctn__active_filter]: props.type === props.activeType
+                [styles.App__todos_ctn__filters_ctn__active_filter]: props.isActive
             }}
         >
             {
@@ -204,7 +204,7 @@ const App: Component = () => {
                                         <FilterButton
                                             type={type}
                                             handleClick={() => setFilterType(type)}
-                                            activeType={filterType()}
+                                            isActive={filterType() === type}
                                         />
                                     )
                                 }
