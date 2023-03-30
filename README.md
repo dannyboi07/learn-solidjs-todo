@@ -1,4 +1,4 @@
-## A Todo App build in SolidJS with the purpose of learning SolidJS, with design templates from FrontendMentor.io
+## A Todo App built in SolidJS with the purpose of learning SolidJS, with design templates from FrontendMentor.io
 ![image](https://user-images.githubusercontent.com/48730475/214680402-9880add1-5177-4e97-80b4-d8a942350e82.png)
 ![image](https://user-images.githubusercontent.com/48730475/214680591-7a3c81fe-2c48-43d8-9bfb-c9b9fec943f6.png)
 ![image](https://user-images.githubusercontent.com/48730475/214680653-e1ca6ee9-7aec-4a69-ab5d-c8e628ad4fe5.png)
